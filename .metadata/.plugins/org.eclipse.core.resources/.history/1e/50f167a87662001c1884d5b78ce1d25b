@@ -1,0 +1,13 @@
+#language: pt
+
+Feature: Aprender Cucumber
+			Daniel como um aluno
+			Quer aprender a utilizar cucumber
+			Para que ele possa automatizar criterio de aceitação
+		
+
+  Scenario: Deve executar a expecificao
+    Given que Daniel criou o arquivo corretamente
+    When executar o arquivo
+    Then execucao dever finalizar com sucesso
+ 

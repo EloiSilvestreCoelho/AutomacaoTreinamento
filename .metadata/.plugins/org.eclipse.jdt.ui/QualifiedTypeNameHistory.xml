@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="io.cucumber.java.pt.Dado"/>
+    <fullyQualifiedTypeName name="io.cucumber.java.pt.Quando"/>
+    <fullyQualifiedTypeName name="org.junit.runner.RunWith"/>
+    <fullyQualifiedTypeName name="io.cucumber.junit.Cucumber"/>
+    <fullyQualifiedTypeName name="io.cucumber.junit.CucumberOptions"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="io.cucumber.java.Before"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.net.URL"/>
+    <fullyQualifiedTypeName name="io.restassured.filter.log.UrlDecoder"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
+    <fullyQualifiedTypeName name="io.cucumber.java.After"/>
+    <fullyQualifiedTypeName name="org.junit.After"/>
+    <fullyQualifiedTypeName name="org.junit.validator.PublicClassValidator"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.chrome.ChromeDriver"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.By.ByXPath"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.support.PageFactory"/>
+    <fullyQualifiedTypeName name="java.sql.Driver"/>
+    <fullyQualifiedTypeName name="groovy.transform.Field"/>
+    <fullyQualifiedTypeName name="com.yourlog.action.YourLogHomeAction"/>
+    <fullyQualifiedTypeName name="com.yourlog.components.YourLogHomeComponent"/>
+    <fullyQualifiedTypeName name="com.yourlog.components.YourLogDressesComponent"/>
+    <fullyQualifiedTypeName name="com.yourlog.action.YourLogLoginAction"/>
+    <fullyQualifiedTypeName name="com.yourlog.components.YourLogLoginComponent"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.support.FindBy"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.WebDriver"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.WebElement"/>
+    <fullyQualifiedTypeName name="com.yourlog.components.PageObject"/>
+    <fullyQualifiedTypeName name="com.yourlog.action.YourLogDressesAction"/>
+    <fullyQualifiedTypeName name="com.yourlog.steps.ValorCartSummarySteps"/>
+    <fullyQualifiedTypeName name="com.yourlog.components.YourLogSummaryComponent"/>
+    <fullyQualifiedTypeName name="com.yourlog.action.YourLogSummaryAction"/>
+    <fullyQualifiedTypeName name="io.cucumber.java.pt.Então"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+</qualifiedTypeNameHistroy>

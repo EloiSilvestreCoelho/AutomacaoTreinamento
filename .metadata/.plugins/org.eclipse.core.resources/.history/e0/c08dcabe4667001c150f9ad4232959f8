@@ -1,0 +1,21 @@
+package com.yourlog.action;
+
+import org.openqa.selenium.WebDriver;
+
+import com.yourlog.components.PageObject;
+import com.yourlog.components.YourLogHomeComponent;
+import com.yourlog.components.YourLogSummaryComponent;
+
+public class YourLogSummaryAction extends PageObject {
+
+	public YourLogSummaryAction(WebDriver driver) {
+		super(driver);
+	}
+	
+	YourLogSummaryComponent yourLogSummaryComponent; 
+	
+//	public void clicar_botao_singHome(){
+//		yourLogHomeComponent = new YourLogHomeComponent(driver);
+//		yourLogHomeComponent.botao_SingHome.click();
+
+}

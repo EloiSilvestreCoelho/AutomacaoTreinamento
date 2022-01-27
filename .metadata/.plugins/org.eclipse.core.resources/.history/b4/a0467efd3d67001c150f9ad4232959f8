@@ -1,0 +1,86 @@
+package com.yourlog.steps;
+
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import com.yourlog.action.YourLogDressesAction;
+import com.yourlog.action.YourLogHomeAction;
+import com.yourlog.action.YourLogLoginAction;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.pt.Dado;
+import io.cucumber.java.pt.Então;
+import io.cucumber.java.pt.Quando;
+
+
+
+public class ValorCartSummarySteps {
+	
+	WebDriver driver;
+	private YourLogHomeAction yourLogHomeAction;
+	private YourLogDressesAction yourLogDressesAction;
+	private YourLogLoginAction yourLogLoginAction;
+	
+	
+	@Before
+	public void iniciar() throws Exception{
+		System.setProperty("webdrive.chrome.driver",
+				"C:\\Users\\esilvesc\\OneDrive - everis\\Escritorio\\YourLogo\\Drive\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(30000, TimeUnit.MILLISECONDS);
+		driver.manage().window().maximize();
+		driver.get("http://automationpractice.com/index.php");
+		
+		yourLogHomeAction = new YourLogHomeAction(driver);
+		yourLogDressesAction = new YourLogDressesAction(driver);
+		yourLogLoginAction = new YourLogLoginAction(driver);
+		
+		}	
+			
+	@After
+	public void finalizar () {
+//		driver.close();
+//		driver.quit();
+		}
+	
+	@Dado("que Daniel acessou a aplicacao yourLog com usuario {string} e senha {string}")
+	public void que_daniel_acessou_a_aplicacao_your_log_com_usuario_e_senha(String usuario, String senha) {
+		yourLogHomeAction.clicar_botao_singHome();
+		yourLogLoginAction.preencher_campoUsuario(usuario);
+		yourLogLoginAction.preencher_campoSenha(senha);
+		yourLogLoginAction.clicar_botaoSingIn();
+	  
+	}
+
+	@Quando("ele navegar ate o Dresses e incluir um produto no carrinho de compra")
+	public void ele_navegar_ate_o_dresses_e_incluir_um_produto_no_carrinho_de_compra() {
+		yourLogHomeAction.clicar_aba_dresses();
+		yourLogDressesAction.selecionar_protudo1();
+		yourLogDressesAction.clicar_botao_addtocart1();
+		yourLogDressesAction.clicar_botao_continueshopping();
+		
+	 
+	}
+
+	@Então("ele verifica se o valor total do Summary está correto contendo um produto")
+	public void ele_verifica_se_o_valor_total_do_summary_está_correto_contendo_um_produto() {
+	  
+	}
+	
+	
+	
+	
+
+	@Quando("ele navegar ate o Dresses e incluir dois produto no carrinho de compra")
+	public void ele_navegar_ate_o_dresses_e_incluir_dois_produto_no_carrinho_de_compra() {
+	  
+	}
+
+	@Então("ele verifica se o valor total do Summary está correto contendo dois produto")
+	public void ele_verifica_se_o_valor_total_do_summary_está_correto_contendo_dois_produto() {
+	
+	}
+	
+//	yourLogHomeAction.clicar_aba_dresses();
+}

@@ -1,0 +1,25 @@
+package com.yourlog.action;
+
+import org.openqa.selenium.WebDriver;
+import com.yourlog.components.PageObject;
+import com.yourlog.components.YourLogHomeComponent;
+import com.yourlog.components.YourLogLoginComponent;
+
+public class YourLogLoginAction extends PageObject {
+	
+	public YourLogLoginAction(WebDriver driver) {
+		super(driver);
+   }
+	YourLogLoginComponent yourLogLoginComponent; 
+			
+	public void preencher_campoUsuario(){
+		yourLogLoginComponent = new YourLogLoginComponent(driver);
+		yourLogLoginComponent.campo_usuario.sendKeys("email@email.email");	
+	}
+	
+	public void preencher_campoUsuario(){
+		yourLogLoginComponent = new YourLogLoginComponent(driver);
+		yourLogLoginComponent.campo_senha.sendKeys("tester123");	
+	}
+
+}

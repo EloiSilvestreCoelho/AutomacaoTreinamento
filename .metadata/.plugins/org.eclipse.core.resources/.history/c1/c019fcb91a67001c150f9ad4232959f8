@@ -1,0 +1,11 @@
+package com.yourlog.action;
+
+import org.openqa.selenium.WebDriver;
+
+public class YourLogDressesAction {
+
+	public YourLogDressesAction(WebDriver driver) {
+		
+	}
+
+}

@@ -1,0 +1,20 @@
+#language: pt
+
+Funcionalidade: Valor Total CartSummary
+			Daniel como usuario do YourLog
+			Quer acessar o carrinho de comprar 
+			Para verificar o Valor Total 
+	
+	@1produto	
+Esquema do Cenário: Verificar valor total do carrinho de compras com um produto
+	Dado que Daniel acessou a aplicacao yourLog e navegou até dresses
+	Quando ele incluir um produto no carrinho de compras
+	Então ele verifica se o valor total do Summary está correto com um produto
+
+
+   @wip 
+   #@2produto   
+Esquema do Cenário: Verificar valor total do carrinho de compras com dois produto
+	Dado que Daniel acessou a aplicacao yourLog e navegou até dresses
+	Quando ele incluir dois produto no carrinho de compras
+	Então ele verifica se o valor total do Summary está correto com dois produto

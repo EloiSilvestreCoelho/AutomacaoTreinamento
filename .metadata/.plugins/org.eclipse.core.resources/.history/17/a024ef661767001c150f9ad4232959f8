@@ -1,0 +1,8 @@
+package com.yourlog.action;
+
+import com.yourlog.components.PageObject;
+
+public class YourLogHomeAction extends PageObject {
+	
+
+}

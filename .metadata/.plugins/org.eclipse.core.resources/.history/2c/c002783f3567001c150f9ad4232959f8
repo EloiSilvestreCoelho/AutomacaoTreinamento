@@ -1,0 +1,5 @@
+package com.yourlog.components;
+
+public class YourLogLoginComponent {
+
+}

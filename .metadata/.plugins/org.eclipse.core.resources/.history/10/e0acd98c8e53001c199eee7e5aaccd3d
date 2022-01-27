@@ -1,0 +1,79 @@
+package br.com.bradesco;
+
+import org.junit.BeforeClass;
+import org.junit.runner.RunWith;
+
+import com.bradesco.core.factory.BrowserKind;
+
+import br.com.bradesco.*;
+import br.com.bradesco.utils.GlobalDriver;
+import br.com.bradesco.utils.Helpers;
+import cucumber.api.CucumberOptions;
+import cucumber.api.SnippetType;
+import cucumber.api.junit.Cucumber;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+        plugin = {"com.hpe.alm.octane.OctaneGherkinFormatter:gherkin-results/TestRunner_OctaneGherkinResults.xml",
+                "junit:junitResults.xml","com.bradesco.report.CucumberReporterPlugin15"},
+        
+        monochrome = true,
+        glue = { "br.com.bradesco.steps"},
+     // features = "./src/main/java/br/com/bradesco/requirements",
+        features = "./src/main/java/br/com/bradesco/requirements/PermissaoAcessoInformacoesPessoa.feature",
+        tags = {"@PermissoesdeAcessoInformacoesPessoais","@Cônjuge_Filhos_Dependentes"} ,
+        snippets = SnippetType.CAMELCASE
+
+)
+public class TestRunner {
+
+    private static void setupBrowser() throws Exception {
+        String wdmCachePath = "src/test/resources/webdrivers";
+        System.setProperty("wdm.cachePath", wdmCachePath);
+        String webDriverPath = "";
+
+        String browserChosen = GlobalDriver.identifyBrowser();
+
+        if (browserChosen.equalsIgnoreCase("chrome")) {
+            WebDriverManager.chromedriver().setup();
+            webDriverPath = WebDriverManager.chromedriver().getDownloadedDriverPath();
+            com.bradesco.core.configuration.Configuration.getGlobal().getWebConfiguration().setBrowserKind(BrowserKind.CHROME);
+        }
+        if (browserChosen.equalsIgnoreCase("ie")) {
+            WebDriverManager.iedriver().setup();
+            webDriverPath = WebDriverManager.iedriver().getDownloadedDriverPath();
+            com.bradesco.core.configuration.Configuration.getGlobal().getWebConfiguration().setBrowserKind(BrowserKind.IE);
+        }
+        if (browserChosen.equalsIgnoreCase("edge")) {
+            WebDriverManager.edgedriver().setup();
+            webDriverPath = WebDriverManager.edgedriver().getDownloadedDriverPath();
+            com.bradesco.core.configuration.Configuration.getGlobal().getWebConfiguration().setBrowserKind(BrowserKind.EDGE);
+        }
+        if (browserChosen.equalsIgnoreCase("firefox")) {
+            WebDriverManager.firefoxdriver().setup();
+            webDriverPath = WebDriverManager.firefoxdriver().getDownloadedDriverPath();
+            com.bradesco.core.configuration.Configuration.getGlobal().getWebConfiguration().setBrowserKind(BrowserKind.FIREFOX);
+        }
+        Helpers.changeProperty("startup.web.browser", browserChosen.toUpperCase());
+
+        if (!Helpers.isAnExistentPropertyValue(webDriverPath)) {
+            Helpers.changeProperty("env.var.webdriver.chrome.driver", webDriverPath);
+        }
+    }
+
+    @BeforeClass
+    public static void oneTimeSetup() throws Exception {
+        String operSys = System.getProperty("os.name").toLowerCase();
+
+
+//        Verificacao necessaria por conta de artefatos que nao sao acessiveis da maquina do CI
+        if (operSys.contains("nix") || operSys.contains("nux")) {
+            setupBrowser();
+        }
+
+        GlobalDriver.start();
+    }
+
+}

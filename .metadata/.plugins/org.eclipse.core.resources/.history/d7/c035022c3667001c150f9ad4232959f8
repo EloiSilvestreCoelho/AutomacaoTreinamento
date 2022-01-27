@@ -1,0 +1,13 @@
+package com.yourlog.components;
+
+import org.openqa.selenium.WebDriver;
+
+import com.yourlog.action.YourLogLoginAction;
+
+public class YourLogLoginComponent extends YourLogLoginAction {
+	
+	public YourLogLoginComponent(WebDriver driver) {
+		super(driver);
+		
+	}
+}

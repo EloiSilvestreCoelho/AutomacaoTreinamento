@@ -1,0 +1,19 @@
+package com.yourlog.components;
+
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+
+import com.yourlog.action.YourLogHomeAction;
+
+
+public class YourLogHomeComponent extends YourLogHomeAction PageObject {
+
+	 public YourLogHomeComponent(BradWebDriver web) throws Exception {
+	        PageObjectInitializer.initializeAllWebFields(web, Duration.ofSeconds(10), this);
+		
+		
+	}
+	
+
+}

@@ -1,0 +1,48 @@
+package com.yourlog.steps;
+
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.yourlog.action.YourLogDressesAction;
+import com.yourlog.action.YourLogHomeAction;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.pt.Dado;
+import io.cucumber.java.pt.Então;
+import io.cucumber.java.pt.Quando;
+
+
+
+public class ValorCartSummarySteps {
+	
+	WebDriver driver;
+	private YourLogHomeAction yourLogHomeAction;
+	private YourLogDressesAction yourLogDressesAction;
+	
+	
+	
+	@Before
+	public void iniciar() throws Exception{
+		System.setProperty("webdrive.chrome.driver",
+				"C:\\Users\\esilvesc\\OneDrive - everis\\Escritorio\\YourLogo\\Drive\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(30000, TimeUnit.MILLISECONDS);
+		driver.manage().window().maximize();
+		driver.get("http://automationpractice.com/index.php");
+		yourLogHomeAction = new YourLogHomeAction(driver);
+		yourLogDressesAction = new YourLogDressesAction(driver);
+		
+		}	
+			
+	@After
+	public void finalizar () {
+//		driver.close();
+//		driver.quit();
+		}
+	
+
+	
+//	yourLogHomeAction.clicar_aba_dresses();
+}

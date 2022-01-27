@@ -1,0 +1,11 @@
+#language: pt
+
+Funcionalidade: Valor Total CartSummary
+			Daniel como usuario YourLog
+			Quer acessar o carrinho de comprar 
+			Para verificar o Valor Total 
+			
+Cenario: Verificar valor total do carrinho de compras
+	Dado que Daniel acessou a aplicacao yourLog
+	Quando ele adicionou 
+	Então 

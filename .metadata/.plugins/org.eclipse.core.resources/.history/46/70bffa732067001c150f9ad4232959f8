@@ -1,0 +1,14 @@
+package com.yourlog.action;
+
+import org.openqa.selenium.WebDriver;
+
+import com.yourlog.components.PageObject;
+
+public class YourLogDressesAction extends PageObject {
+
+	public YourLogDressesAction(WebDriver driver) {
+		super(driver);
+	}
+
+	
+}

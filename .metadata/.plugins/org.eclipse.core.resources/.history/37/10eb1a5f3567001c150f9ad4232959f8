@@ -1,0 +1,5 @@
+package com.yourlog.action;
+
+public class YourLogLoginAction {
+
+}

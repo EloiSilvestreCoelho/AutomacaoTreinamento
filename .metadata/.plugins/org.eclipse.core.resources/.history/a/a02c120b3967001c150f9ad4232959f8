@@ -1,0 +1,20 @@
+package com.yourlog.action;
+
+import org.openqa.selenium.WebDriver;
+
+import com.yourlog.components.PageObject;
+import com.yourlog.components.YourLogHomeComponent;
+
+public class YourLogHomeAction extends PageObject {
+
+	public YourLogHomeAction(WebDriver driver) {
+		super(driver);
+	}
+	YourLogHomeComponent yourLogHomeComponent;
+	
+	public void clicar_aba_dresses(){
+		yourLogHomeComponent = new YourLogHomeComponent(driver);
+		yourLogHomeComponent.aba_Dresses.click();
+		
+	}
+}

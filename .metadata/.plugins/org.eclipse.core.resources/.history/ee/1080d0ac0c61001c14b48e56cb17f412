@@ -1,0 +1,18 @@
+#language: pt
+
+Funcionalidade: Produtos no carrinho de compras
+  Como um usuario do YourLog 
+  Davi quer acessar o carrinho de compra 
+  Para garantir que o valor total esta correto
+
+ Esquema do Cenário: Realizar calculo das taxas
+    Dado que Davi ao acessar o YourLog com o usuario <"email@email.email"> e sua senha <"tester123">
+    Quando selecionar o <Produto> o navegar até o carrinho de compras
+    Então o campo valor total deve esta correto considerando as taxas
+
+    Exemplos: 
+      |    Produto     |
+      |	"Blouse"       |		
+      | "Printed Dress"|
+
+      

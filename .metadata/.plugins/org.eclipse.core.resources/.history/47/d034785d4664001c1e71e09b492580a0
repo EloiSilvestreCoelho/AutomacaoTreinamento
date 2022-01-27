@@ -1,0 +1,8 @@
+package com.yourlog.components;
+
+import com.yourlog.action.YourLogHomeAction;
+
+public class YourLogHomeComponent extends YourLogHomeAction {
+	
+
+}
