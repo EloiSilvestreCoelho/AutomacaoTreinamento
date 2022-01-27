@@ -24,7 +24,7 @@ public class ValorCartSummarySteps {
 	private YourLogLoginAction yourLogLoginAction;
 	private YourLogSummaryAction yourLogSummaryAction;
 	
-	
+	//teste git
 	@Before
 	public void iniciar() throws Exception{		
 		DriverFactory.getdriver().get("http://automationpractice.com/index.php");
